@@ -1,9 +1,11 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "eslint-config-prettier",
+    "eslint:recommended"
+    // "plugin:prettier/recommended"
   ],
   "settings": {
     "react": {
@@ -24,9 +26,12 @@
     "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "no-console": "warn",
     "semi": ["error", "always"],
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single"],
     "indent": ["error", 2],
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+
+    // Prettierと競合するルールは無効化する
+    "prettier/prettier": "error"
   },
   "env": {
     "browser": true,
@@ -43,6 +48,7 @@
   "plugins": [
     "react",
     "react-hooks",
-    "jsx-a11y"
+    "jsx-a11y",
+    "prettier" // ESLintでPrettierを使用するためのプラグインを追加
   ]
 }
